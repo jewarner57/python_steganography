@@ -15,11 +15,6 @@ def decode_image(path_to_png):
     decoded_image = Image.new("RGB", encoded_image.size)
     x_size, y_size = encoded_image.size
 
-    # TODO: Using the variables declared above, replace `print(red_channel)` with a complete implementation:
-    # Start coding here!
-    # print(red_channel)
-    # print(red_channel.getpixel((0, 0)))
-
     for x in range(0, x_size):
         for y in range(0, y_size):
             binValStr = str(bin(red_channel.getpixel((x, y))))
@@ -97,6 +92,11 @@ def write_text(text_to_write, image_size, font_size, autoBreakLines):
     return image
 
 
-decode_image('./encoded_image.png')
-# encode_image('./rick.png',
-#              "Dont be angry at me for making \nyou type this in by hand.\nyoutube.com/watch?v=qSsZZwLp3ko", False)
+# Run this to decode an encoded image
+# decode_image('./encoded_sample.png')
+
+
+# Run this to encode an image with text
+# encode_image('image-path', 'text-to-encode', 'bool: auto add line breaks')
+encode_image('./image_to_encode.jpg',
+             "Here is some text to encode in an image", False)
